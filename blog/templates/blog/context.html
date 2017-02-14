@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ contextdetail.title }}{% endblock %}
+
+{% block context %}
+    <div id="paper">
+        <foo style="font-size: 25px">{{ contextdetail.title }}</foo><br>
+        分类:<a href="{% url 'detail' nav_context.id %}">{{ contextdetail.classify }}</a>
+        | 日期:{{ contextdetail.create_time|date:'m-j-Y' }} | 阅读({{ contextdetail.hits }})<br><br>
+        {{ contextdetail.context|safe }}
+        <hr>
+    {% comment %}
+        {% for i in l %}
+            {{ forloop.counter }}----{{ i }}<br>
+        {% endfor %}<hr>
+        {% endcomment %}
+        {{ ll }}----{{ lll }}
+    </div>
+
+{% endblock %}
+{% block bottom %}
+
+    <div style="text-align: left">
+        {% if per_art %}
+            <a href="{% url 'contextDetail' nav_context.id per_art.id %}">上一篇:{{ per_art.title }}</a>
+        {% endif %}
+        <br><br>
+        {% if nex_art %}
+            <a href="{% url 'contextDetail' nav_context.id nex_art.id %}">下一篇:{{ nex_art.title }}</a>
+        {% endif %}
+    </div>
+    {{ session }}
+{% endblock %}
+
+
+

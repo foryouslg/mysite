@@ -1,0 +1,9 @@
+admin 
+root
+
+123
+user
+password 
+ admin
+
+administrator

@@ -1,0 +1,191 @@
+body{
+    /*background-image: url("img/background.jpg");*/
+    background-color: black;
+    background-repeat: repeat;
+}
+#div1{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+.top{
+    width: 100%;
+    height: 100px;
+}
+
+aside{
+    width: 300px;
+    border:solid 1px sandybrown;
+    padding:0;
+    margin:0;
+    float: left;
+    display: block;
+    overflow: scroll;
+    background: #f5f5f5;
+    border-right: 1px solid #c8c8c8;
+    height: 100%;
+    line-height: 1.8em;
+    position: fixed;
+}
+a {
+    color: #d00;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#logo{
+    text-align: center;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background: rgba(255,255,255,0.9) none repeat scroll 0 0;
+    border-bottom: 1px solid #e3e3e5;
+    margin-bottom: 30px;
+}
+#logo a {
+    font-family: Cuprum;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+}
+#logo a:hover {
+    color: #d00;
+    text-decoration: none;
+}
+
+aside .nav,#me{
+    background: rgba(255,255,255,0.9) none repeat scroll 0 0;
+    border-bottom:1px solid #e3e3e5;
+    margin-bottom:30px;
+}
+aside .nav .cell,#me{
+    border-bottom: 1px solid #f0f0f0;
+    padding:0 20px;
+    height: 44px;
+    line-height: 44px;
+}
+
+aside .nav .cell,#me a{
+    color: #000;
+}
+aside .nav .cell:hover{
+    background: #d00 none repeat scroll 0 0;
+}
+aside #me li:hover{
+    background: #d00 none repeat scroll 0 0;
+}
+aside .nav .cell a:hover{
+    background: #d00 none repeat scroll 0 0;
+}
+aside #me li a:hover{
+    background: #d00 none repeat scroll 0 0;
+}
+aside .nav .cell:hover a{
+
+    color: #fff;
+}
+aside #me:hover a{
+    color: #fff;
+}
+
+#isolation{
+    width:1%;
+    float:left;
+    padding:0;
+    margin:0;
+    border:solid 1px rebeccapurple;
+}
+#main{
+    width:860px;
+    border:solid 1px antiquewhite;
+    padding:10px;
+    margin:0;
+    float: right;
+    background: #f5f5f5;
+}
+#main #arttitle{
+    font-size: 25px;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    line-height: 44px;
+    padding:0;
+    font-size: 15px;
+
+}
+ul a{
+    display: block;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    text-decoration:none;
+}
+ul a:hover{
+    background: red;
+    text-decoration: none;
+}
+
+#bottom{
+    text-align: center;
+}
+#bottom a{
+    color: black;
+}
+#paper{
+    background-color: #fff;
+    padding: 20px 20px 15px 20px;
+    border: 1px solid #e3e3e5;
+    margin-bottom: 30px;
+    position:relative;
+    width: 95%;
+}
+#paper a{
+    target: "windName";
+}
+
+#search{
+    width: 100%;
+    background: rgba(255,255,255,0.9) none repeat scroll 0 0;
+    border-bottom:1px solid #e3e3e5;
+    margin-bottom:70px;
+}
+/*
+.form-wrapper {
+    width: 450px;
+    padding: 15px;
+    margin: 150px auto 50px auto;
+    background: #444;
+    background: rgba(0,0,0,.2);
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+*/
+
+.form-wrapper input {
+    width: 70%;
+    height: 20px;
+    padding: 10px 5px;
+    float: left;
+    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: solid 1px #fff;
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+}
+.form-wrapper button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 25%;
+    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    color: #fff;
+    text-transform: uppercase;
+    background: #d83c3c;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}

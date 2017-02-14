@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+    {% load hitcount_tags %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    <script src="{% static 'ueditor/third-party/SyntaxHighlighter/shCore.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'ueditor/third-party/SyntaxHighlighter/shCoreDefault.css' %}">
+    <link rel="shortcut icon" href="{% static 'blog/img/favicon64X64.ico' %}">
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <script type="application/javascript" src="{% static 'hitcount/hitcount-jquery.js' %}"></script>
+</head>
+<body style="word-break: break-all">
+<div id="div1">
+
+    <aside >
+        <div id="logo">
+            <a href="{% url 'index' %}">Foryouslg's Blog </a>
+        </div>
+        <div class="nav">
+            <ul>
+                {% for n in nav %}
+                    <li class="cell"><a href="{% url 'detail' n.id %}">{{ n.nav_name }} &nbsp ({{ n.context_set.count }})  </a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="search">
+            <form class="form-wrapper cf">
+                <input type="text" placeholder="Search here..." required>
+                <button type="submit">Search</button>
+            </form>
+
+        </div>
+        <div id="me">
+            <ul><li><a href="{% url 'aboutme' %}">关于我</a></li></ul>
+        </div>
+    </aside>
+
+    <div id="main">
+        {% block context %}
+
+            {% if home_article %}
+                {% for i in home_article %}
+                    {% if forloop.counter <= 5 %}
+                        {% include 'blog/art.html' %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {% if all_article %}
+                {% for i in all_article %}
+                    {% if forloop.counter <= 9 %}
+                        {% include 'blog/art.html' %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {% if page_article %}
+                {% for i in page_article %}
+                    {% include 'blog/art.html' %}
+                {% endfor %}
+            {% endif %}
+
+        {% endblock %}
+{% comment %}
+        {% insert_hit_count_js_variables for object %}
+        {% get_hit_count_js_variables for object as hitcount %}
+        {{ hitcount.ajax_url }}
+        {{ hitcount.pk }}
+    {% get_hit_count for [object] %}
+    {% get_hit_count for [object] as [var] %}
+    {% get_hit_count for [object] within ["days=1,minutes=30"] %}
+    {% get_hit_count for [object] within ['days=1,minutes=30'] as [var] %}
+{% endcomment %}
+        <div id="bottom">
+            {% block bottom %}
+            {% endblock %}
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

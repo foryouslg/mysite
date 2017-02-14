@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ nav_context }}{% endblock %}
+
+
+{% block bottom %}
+    {% if page_article.has_previous %}
+        <a href="{% url 'detailpaginator' nav_context.id per_page %}">上一页</a>
+    {% endif %}
+    {% for i in page.page_range %}
+        <a href="{% url 'detailpaginator' nav_context.id i %}">{{ i }}</a>
+    {% endfor %}
+    {% if page_article.has_next %}
+        <a href="{% url 'detailpaginator' nav_context.id nex_page %}">下一页</a>
+    {% endif %}
+{% endblock %}

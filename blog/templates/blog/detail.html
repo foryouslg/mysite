@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block title %}Foryouslg's Blog - {{ nav_context }}{% endblock %}
+
+{# 导航分类文章罗列块 #}
+
+
+{% block bottom %}
+        <a href="">上一页</a>
+        {% for i in page.page_range %}
+            <a href="{% url 'detailpaginator' nav_context.id i %}">{{ i }}</a>
+        {% endfor %}
+        <a href="{% url 'detailpaginator' nav_context.id 2 %}">下一页</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load staticfiles %}
+
+<div id="paper">
+    <a href="{% url 'contextDetail'  i.classify.id i.id %}" id="arttitle">{{ i.title }}</a><br>
+    分类:<a href="{% url 'detail' i.classify.id %}"> {{ i.classify }}</a> | 日期:{{ i.create_time|date:'m-j-Y' }}<br><br>
+
+    {{ i.context|safe|truncatechars_html:200 }}
+
+
+    <div >
+        {% if i.context|length >= 200 %}
+            <a href="{% url 'contextDetail'  i.classify.id i.id %}">
+                [阅读全文]
+            </a>
+        {% endif %}
+    </div>
+</div>

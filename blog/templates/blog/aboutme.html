@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}AboutMe{% endblock %}
+
+{% block context %}
+    <div id="paper" >
+        {{ cookie }}
+        <br>
+        {{ req.cookies }}
+        <br>
+        {{ session }}
+        <br>
+        {{ req }}
+    </div>
+    <img src="/static/blog/img/favicon.ico" width="200px">
+    <br>
+    CSDN博客地址:<a href="http://blog.csdn.net/foryouslgme" >http://blog.csdn.net/foryouslgme</a>
+{% endblock %}
